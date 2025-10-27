@@ -32,36 +32,6 @@ An interactive **React + Tailwind CSS** web application that visualizes **real-t
 
 ---
 
-## 🗂️ Folder Structure
-
-earthquake-visualizer/
-│
-├── public/
-│ └── favicon.ico
-│
-├── src/
-│ ├── components/
-│ │ ├── Header.jsx
-│ │ ├── Footer.jsx
-│ │ ├── MapView.jsx
-│ │ ├── Sidebar.jsx
-│ │ └── ZoomControl.jsx
-│ │
-│ ├── hooks/
-│ │ └── useEarthquake.js
-│ │
-│ ├── App.jsx
-│ ├── main.jsx
-│ ├── index.css
-│ └── ...
-│
-├── .env
-├── package.json
-└── README.md
-
-
----
-
 ## ⚡ Setup Instructions
 
 ### 1️⃣ Clone the repository
