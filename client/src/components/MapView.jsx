@@ -8,10 +8,11 @@ import ZoomControls from "./ZoomControl.jsx";
 export default function MapView() {
   const [minMag, setMinMag] = useState(0);
   const [timeFrame, setTimeFrame] = useState("all_day");
+  const [startDate, setStartDate] = useState("");
+  const [endDate, setEndDate] = useState("");
   const [sidebarOpen, setSidebarOpen] = useState(true);
 
-  const { earthquakes, loading, error, fetchEarthquakes } = useEarthquakes(timeFrame);
-  const filteredQuakes = earthquakes.filter((eq) => eq.properties.mag >= minMag);
+  const { earthquakes, loading, error, fetchEarthquakes } = useEarthquakes({ timeFrame, startDate, endDate, minMag });
 
   if (loading)
     return <p className="text-center mt-10 text-gray-700">Loading map...</p>;
@@ -28,6 +29,10 @@ export default function MapView() {
         setTimeFrame={setTimeFrame}
         minMag={minMag}
         setMinMag={setMinMag}
+        startDate={startDate}
+        setStartDate={setStartDate}
+        endDate={endDate}
+        setEndDate={setEndDate}
         fetchEarthquakes={fetchEarthquakes}
       />
 
@@ -51,7 +56,7 @@ export default function MapView() {
         />
 
         {/* Earthquake Markers */}
-        {filteredQuakes.map((eq) => {
+        {earthquakes.map((eq) => {
           const [lng, lat, depth] = eq.geometry.coordinates;
           const mag = eq.properties.mag;
           const color =

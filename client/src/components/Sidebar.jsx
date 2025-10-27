@@ -8,6 +8,10 @@ export default function Sidebar({
   setTimeFrame,
   minMag,
   setMinMag,
+  startDate,
+  setStartDate,
+  endDate,
+  setEndDate,
   fetchEarthquakes,
 }) {
   return (
@@ -34,6 +38,7 @@ export default function Sidebar({
             <option value="all_hour">Past Hour</option>
             <option value="all_day">Past Day</option>
             <option value="all_week">Past Week</option>
+            <option value="all_month">Past Month</option>
           </select>
 
           {/* Magnitude */}
@@ -48,6 +53,21 @@ export default function Sidebar({
             <option value={4.5}>4.5+</option>
             <option value={6}>6.0+</option>
           </select>
+
+          {/* Custom Date */}
+          <label className="text-sm font-medium mt-4">Custom Date Range</label>
+          <input
+            type="date"
+            value={startDate}
+            onChange={(e) => setStartDate(e.target.value)}
+            className="w-full bg-gray-800/60 text-white rounded-md mt-1 p-2 text-sm"
+          />
+          <input
+            type="date"
+            value={endDate}
+            onChange={(e) => setEndDate(e.target.value)}
+            className="w-full bg-gray-800/60 text-white rounded-md mt-2 p-2 text-sm"
+          />
 
           {/* Refresh */}
           <button
