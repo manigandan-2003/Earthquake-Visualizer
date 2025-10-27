@@ -1,1 +1,15 @@
 @import "tailwindcss";
+
+.leaflet-popup-content-wrapper {
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+.leaflet-popup-tip {
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+.leaflet-popup {
+  background: transparent !important;
+}
