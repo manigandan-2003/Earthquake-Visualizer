@@ -67,7 +67,7 @@ export default function MapView() {
               fillOpacity={0.7}
             >
               <Popup closeButton={false}>
-                <div className="backdrop-blur-md bg-gray-900/50 text-white rounded-lg p-3 shadow-lg text-sm">
+                <div className="backdrop-blur-md bg-gray-900/40 text-white rounded-lg p-3 shadow-lg text-sm">
                   <strong>{eq.properties.place}</strong>
                   <br />
                   Magnitude: {mag}
