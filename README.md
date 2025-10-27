@@ -50,4 +50,5 @@ npm run dev
 Then open http://localhost:5173/
 
 in your browser.
-🌐 API Reference
+
+🌐 For API Reference look into USGS Earthquake Api
