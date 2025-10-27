@@ -14,6 +14,14 @@ export default function Sidebar({
   setEndDate,
   fetchEarthquakes,
 }) {
+
+  // Function to reset custom dates
+  const resetDates = () => {
+    setStartDate("");
+    setEndDate("");
+    fetchEarthquakes(); // Refresh data with default timeFrame
+  };
+  
   return (
     <>
       {/* Sidebar */}
@@ -68,6 +76,14 @@ export default function Sidebar({
             onChange={(e) => setEndDate(e.target.value)}
             className="w-full bg-gray-800/60 text-white rounded-md mt-2 p-2 text-sm"
           />
+
+          {/* Reset Dates Button */}
+          <button
+            onClick={resetDates}
+            className="mt-2 bg-gray-800/60 hover:bg-gray-700/60 text-white rounded-md py-1 px-2 text-xs w-full transition"
+          >
+            Reset Dates
+          </button>
 
           {/* Refresh */}
           <button
